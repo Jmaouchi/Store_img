@@ -20,5 +20,21 @@ app.get('', (req,res) => {
   res.render('home')
 });
 
+app.post('', (req, res) => {
+  let sampleFile;
+  let uploadPath;
+
+
+  if(!req.files || Object.keys(req.files).length === 0){
+      return res.status(400).send('no files were uploaded');
+  }
+
+  sampleFile = req.files.sampleFile;
+  console.log(sampleFile);
+
+  
+
+})
+
 
 app.listen(PORT, () => console.log(`litening on port ${PORT}`) )
